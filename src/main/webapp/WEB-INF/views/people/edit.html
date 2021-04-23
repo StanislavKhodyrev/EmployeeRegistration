@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Update employee</title>
+</head>
+<body>
+
+<form th:method="PATCH" th:action="@{/people/{id}(id=${employee.getId()})}" th:object="${employee}">
+    <label for="name"> Enter you name: </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name error</div>
+    <br/>
+
+    <label for="surname"> Enter you surname: </label>
+    <input type="text" th:field="*{surname}" id="surname"/>
+    <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">Name error</div>
+    <br/>
+
+    <label for="position"> Enter you surname: </label>
+    <input type="text" th:field="*{position}" id="position"/>
+    <div style="color:red" th:if="${#fields.hasErrors('position')}" th:errors="*{position}">Name error</div>
+    <br/>
+
+    <label for="age"> Enter you age: </label>
+    <input type="text" th:field="*{age}" id="age"/>
+    <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age error</div>
+    <br/>
+
+    <label for="workExperience"> Enter you work experience: </label>
+    <input type="text" th:field="*{workExperience}" id="workExperience"/>
+    <div style="color:red" th:if="${#fields.hasErrors('workExperience')}"
+         th:errors="*{workExperience}">workExperience error</div>
+    <br/>
+
+    <label for="email"> Enter you email: </label>
+    <input type="text" th:field="*{email}" id="email"/>
+    <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email error</div>
+    <br/>
+
+    <label for="telNumber"> Enter you email: </label>
+    <input type="text" th:field="*{telNumber}" id="telNumber"/>
+    <div style="color:red" th:if="${#fields.hasErrors('telNumber')}" th:errors="*{telNumber}">telNumber error</div>
+    <br/>
+    <input type="submit" value="Update!"/>
+</form>
+
+</body>
+</html>

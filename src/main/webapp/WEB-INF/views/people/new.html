@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New employee</title>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/people}" th:object="${employee}">
+    <label for="name">name: </label>
+    <input type="text" th:field="*{name}" id="name"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">errors</div>
+    <br>
+    <label for="surname">surname: </label>
+    <input type="text" th:field="*{surname}" id="surname"/>
+    <div style="color:red" th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">errors</div>
+    <br/>
+    <label name="position">position: </label>
+    <select name="position">
+        <option value="JuniorDeveloper">JuniorDeveloper</option>
+        <option value="MiddleDeveloper">MiddleDeveloper</option>
+        <option value="SeniorDeveloper">SeniorDeveloper</option>
+        <option value="TechLead">TechLead</option>
+        <option value="TeamLead">TeamLead</option>
+        <option value="QA-Engineer">QA-Engineer</option>
+        <option value="HR">QA-Engineer</option>
+    </select>
+    <br/>
+
+    <label for="age">age: </label>
+    <input type="text" th:field="*{age}" id="age"/>
+    <div style="color:red" th:if="${#fields.hasErrors('age')}" th:errors="*{age}">errors</div>
+    <br/>
+
+    <label for="workExperience"> Enter you work experience: </label>
+    <input type="text" th:field="*{workExperience}" id="workExperience"/>
+    <div style="color:red" th:if="${#fields.hasErrors('workExperience')}" th:errors="*{workExperience}">errors</div>
+    <br/>
+
+    <label for="email">email: </label>
+    <input type="text" th:field="*{email}" id="email"/>
+    <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">errors</div>
+    <br/>
+
+    <label for="telNumber">phone number: </label>
+    <input type="text" th:field="*{telNumber}" id="telNumber"/>
+    <div style="color:red" th:if="${#fields.hasErrors('telNumber')}" th:errors="*{telNumber}">errors</div>
+    <br/>
+    <input type="submit" value="Create!"/>
+</form>
+
+</body>
+</html>
